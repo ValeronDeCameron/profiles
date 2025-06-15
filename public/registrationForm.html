@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Registration</title>
+  <link
+    rel="stylesheet"
+    href="css/main.css"
+  >
+</head>
+<body>
+<div class="wrapper">
+  <div class="main">
+    <form
+      id="form-reg"
+      class="form-reg"
+    >
+      <div class="login log-div">
+        <label>
+          <input
+            type="text"
+            placeholder="Enter login"
+            class="input"
+          >
+        </label>
+      </div>
+      <div class="email log-div">
+        <label>
+          <input
+            type="email"
+            placeholder="Enter your e-mail"
+            class="input"
+          >
+        </label>
+
+      </div>
+      <div class="password log-div">
+        <label>
+          <input
+            type="password"
+            placeholder="Create password"
+            class="input"
+          >
+        </label>
+      </div>
+      <div class="re-password log-div">
+        <label>
+          <input
+            type="password"
+            placeholder="Rewrite password"
+            class="input"
+          >
+        </label>
+      </div>
+      <span>What is your gender?</span>
+      <div class="urGender">
+        <label>
+          male
+          <input
+            type="radio"
+            name="gender"
+            id=""
+          >
+        </label>
+        <label>
+          female
+          <input
+            type="radio"
+            name="gender"
+            id=""
+          >
+        </label>
+      </div>
+      <button
+        type="submit"
+        class="button reg-btn"
+      >Sign up
+      </button>
+      <button
+        type="button"
+        class="button login-btn"
+      ><a href="./LoginForm.html">Have an account? Click here</a></button>
+    </form>
+  </div>
+
+
+  <div class="modal-wrapper none">
+    <div class="modal success">
+      <h1 class="h1">SUCCESS</h1>
+      <span>Now you can enter your account</span>
+      <button class="button small-btn-active-positive">OK</button>
+    </div>
+  </div>
+
+
+  <div class="modal-wrapper none">
+    <div class="modal wrong">
+      <h1 class="h1">Something going wrong</h1>
+      <span>Please try again</span>
+      <button class="button small-btn-active-negative">OK</button>
+    </div>
+  </div>
+
+
+</div>
+<script src="scripts/script.js"></script>
+</body>
+</html>

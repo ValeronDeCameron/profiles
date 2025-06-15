@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Registration</title>
+  <link
+    rel="stylesheet"
+    href="css/main.css"
+  >
+</head>
+<body>
+<div class="wrapper">
+  <div class="main">
+    <form
+      id="form-reg"
+      class="form-reg"
+    >
+      <div class="login log-div">
+        <label>
+          <input
+            type="text"
+            placeholder="Login or email"
+            class="input"
+          >
+        </label>
+      </div>
+
+      <div class="password log-div">
+        <label>
+          <input
+            type="password"
+            placeholder="Password"
+            class="input"
+          >
+        </label>
+      </div>
+
+      <button
+        type="submit"
+        class="button reg-btn"
+      >Login
+      </button>
+      <button
+        type="button"
+        class="button login-btn"
+      ><a href="./registrationForm.html">Don`t have an account yet? Click
+        here</a></button>
+    </form>
+  </div>
+
+
+  <div class="modal-wrapper none">
+    <div class="modal success">
+      <h1 class="h1">SUCCESS</h1>
+      <span>You entered your account XD</span>
+      <button class="button small-btn-active-positive">OK</button>
+    </div>
+  </div>
+
+
+  <div class="modal-wrapper none">
+    <div class="modal wrong">
+      <h1 class="h1">Something going wrong</h1>
+      <span>Please try again</span>
+      <button class="button small-btn-active-negative">OK</button>
+    </div>
+  </div>
+
+
+</div>
+<script src="scripts/script.js"></script>
+</body>
+</html>

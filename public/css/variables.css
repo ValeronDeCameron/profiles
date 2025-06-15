@@ -1,0 +1,8 @@
+:root {
+  --bg-wrapper-color: rgb(214, 180, 138);
+  --input-bg: bisque;
+  --primary-button-color: rgb(250, 160, 175);
+  --active-button-color: rgb(55, 177, 25);
+  --modal-color: rgb(223, 159, 80);
+  --negative-button-color: red;
+}
