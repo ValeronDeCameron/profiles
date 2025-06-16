@@ -4,13 +4,17 @@ class userControler {
 
   async createUser(req, res) {
         const {login, email, password} = req.body
-        const getUsers = await db.query('SELECT * FROM users WHERE login = $1', [login])
-        if (getUsers.rows.length !== 0) res.json('user with that login already exists')
-        else {
+        if (!login || !email || !password) {
+          return res.status(400).send({message: 'Need more information'})
+        } else {
+          const getUsers = await db.query('SELECT * FROM users WHERE login = $1', [login])
+          if (getUsers.rows.length !== 0) res.json('user with that login already exists')
+          else {
             const newUser = await db.query('INSERT INTO users (login, email, password) values ($1, $2, $3) RETURNING *',
-            [login, email, password])
+              [login, email, password])
             console.log(`Account successfully created`)
             res.json(newUser.rows[0])
+          }
         }
     }
 
