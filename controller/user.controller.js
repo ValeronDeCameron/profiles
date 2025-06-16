@@ -1,22 +1,22 @@
 const db = require('../db')
 
-class userControler {
+class userController {
 
   async createUser(req, res) {
-        const {login, email, password} = req.body
-        if (!login || !email || !password) {
-          return res.status(400).send({message: 'Need more information'})
-        } else {
-          const getUsers = await db.query('SELECT * FROM users WHERE login = $1', [login])
-          if (getUsers.rows.length !== 0) res.json('user with that login already exists')
-          else {
-            const newUser = await db.query('INSERT INTO users (login, email, password) values ($1, $2, $3) RETURNING *',
-              [login, email, password])
-            console.log(`Account successfully created`)
-            res.json(newUser.rows[0])
-          }
-        }
+    const {login, email, password} = req.body
+    if (!login || !email || !password) {
+      return res.status(400).send({message: 'Need more information'})
+    } else {
+      const getUsers = await db.query('SELECT * FROM users WHERE login = $1', [login])
+      if (getUsers.rows.length !== 0) res.json('user with that login already exists')
+      else {
+        const newUser = await db.query('INSERT INTO users (login, email, password) values ($1, $2, $3) RETURNING *',
+          [login, email, password])
+        console.log(`Account successfully created`)
+        res.json(newUser.rows[0])
+      }
     }
+  }
 
   async getUsers(req, res) {
     const users = await db.query('SELECT * FROM users')
@@ -40,14 +40,14 @@ class userControler {
     const deleteUser = await db.query('DELETE FROM users where id = $1 RETURNING *', [id])
     res.json('Deleted!')
   }
-  
+
   async loginUser(req, res) {
     const {login, password} = req.body
     const getUsers = await db.query('SELECT * FROM users WHERE login = $1 AND password = $2', [login, password])
-    if (getUsers.rows.length === 0) res.json('There`s no user with that parametes')
+    if (getUsers.rows.length === 0) res.json('There`s no user with that parameters')
     else if (getUsers.rows) res.json(getUsers.rows)
   }
-  
+
 }
 
-module.exports = new userControler()
+module.exports = new userController()
