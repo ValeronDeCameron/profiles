@@ -1,6 +1,7 @@
 const db = require('../db')
 
 class userControler {
+
   async createUser(req, res) {
     const {login, email, password} = req.body
     const newUser = await db.query('INSERT INTO users (login, email, password) values ($1, $2, $3) RETURNING *', [login, email, password])
@@ -32,6 +33,7 @@ class userControler {
     const deleteUser = await db.query('DELETE FROM users where id = $1 RETURNING *', [id])
     res.json('Deleted!')
   }
+  
 }
 
 module.exports = new userControler()
