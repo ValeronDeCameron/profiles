@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
-  <title>Registration</title>
+  <title>Log in</title>
   <link
     rel="stylesheet"
     href="css/main.css"
@@ -16,7 +16,7 @@
 <div class="wrapper">
   <div class="main">
     <form
-      id="form-reg"
+      id="form_login"
       class="form-reg"
     >
       <div class="login log-div">
@@ -25,6 +25,8 @@
             type="text"
             placeholder="Login or email"
             class="input"
+            id="login"
+            required
           >
         </label>
       </div>
@@ -35,6 +37,8 @@
             type="password"
             placeholder="Password"
             class="input"
+            id="password"
+            required
           >
         </label>
       </div>
@@ -42,7 +46,7 @@
       <button
         type="submit"
         class="button reg-btn"
-      >Login
+      >Log In
       </button>
       <button
         type="button"
@@ -53,25 +57,27 @@
   </div>
 
 
-  <div class="modal-wrapper none">
+  <div class="modal-wrapper none"
+  id="success_modal">
     <div class="modal success">
       <h1 class="h1">SUCCESS</h1>
       <span>You entered your account XD</span>
-      <button class="button small-btn-active-positive">OK</button>
+      <button class="button small-btn-active-positive OK_btn">OK</button>
     </div>
   </div>
 
 
-  <div class="modal-wrapper none">
+  <div class="modal-wrapper none"
+  id="wrong_modal">
     <div class="modal wrong">
       <h1 class="h1">Something going wrong</h1>
       <span>Please try again</span>
-      <button class="button small-btn-active-negative">OK</button>
+      <button class="button small-btn-active-negative OK_btn">OK</button>
     </div>
   </div>
 
 
 </div>
-<script src="scripts/script.js"></script>
+<script src="scripts/login_script.js"></script>
 </body>
 </html>

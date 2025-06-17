@@ -45,10 +45,16 @@ class userController {
   }
 
   async loginUser(req, res) {
-    const {login, password} = req.body
-    const getUsers = await db.query('SELECT * FROM users WHERE login = $1 AND password = $2', [login, password])
-    if (getUsers.rows.length === 0) res.json('There`s no user with that parameters')
-    else if (getUsers.rows) res.json(getUsers.rows)
+    const {input, password} = req.body
+    if (!input || !password) {
+      return res.status(400).send({message: 'Need more information'})
+    } else {
+      const getUsers = await db.query('SELECT * FROM users WHERE (login = $1 OR email = $1) AND password = $2', [input, password])
+      if (getUsers.rows.length === 0) {
+        return res.status(400).send({message: 'There`s no user with this parameters'})
+      }
+      else if (getUsers.rows) res.json(getUsers.rows)
+    }
   }
 
 }
