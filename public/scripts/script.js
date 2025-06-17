@@ -1,23 +1,3 @@
-// const data =
-//   {
-//     "login": "clone322",
-//     "email": "greedcost32@gmail.com",
-//     "password": "123456"
-//   }
-//
-// const url = "http://localhost:3000/api/user";
-//
-// fetch (url, {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify(data)
-// })
-// .then(res => res.json())
-// .then(data => console.log('Created user: ', data))
-// .catch(err => console.log(err));
-
 const loginInput = document.getElementById("login");
 const reg_btn = document.getElementById("reg_btn");
 const form_reg = document.getElementById("form_reg");
@@ -50,7 +30,10 @@ form_reg.addEventListener("submit", (e) => {
       body: JSON.stringify(data)
     })
     .then(res => res.json())
-    .then(data => console.log('Created user: ', data))
+    .then(data => {
+      console.log(data)
+
+    })
     .catch(err => console.log(err));
   }
 })
